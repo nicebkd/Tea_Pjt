@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- base-definition -->
+	<definition name="base-definition"
+		template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="menu"
+			value="/WEB-INF/views/tiles/template/defaultMenu.jsp" />
+		<put-attribute name="mainImage" value=""></put-attribute>
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />
+	</definition>
+	
+	<definition name="empty" template="//WEB-INF/views/tiles/layouts/empty.jsp">
+		<put-attribute name="content" value="" />
+	</definition>
+	
+	
+	<definition name="admin/order_list" extends="empty">
+		<put-attribute name="content" value="/WEB-INF/views/admin/order_list.jsp" />
+	</definition>
+	
+	<definition name="/shop/coupon" extends="empty">
+		<put-attribute name="content" value="/WEB-INF/views/shop/coupon.jsp" />
+	</definition>
+	
+	<definition name="shop/cart_list_page" extends="empty">
+		<put-attribute name="content" value="/WEB-INF/views/shop/cart_list_page.jsp" />
+	</definition>
+	
+	
+	
+
+	<!-- Home Page -->
+	<definition name="home" extends="base-definition">
+		<put-attribute name="title" value="Tea_Pjt_tiles_ver" />
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	</definition>
+
+	<definition name="board/view" extends="base-definition">
+		<put-attribute name="title" value="Tea_Pjt_tiles_ver" />
+		<put-attribute name="mainImage"
+			value="/WEB-INF/views/tiles/template/defaultImage.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/board/view.jsp" />
+	</definition>
+
+	<definition name="reply/*" extends="base-definition">
+		<put-attribute name="title" value="Tea_Pjt_tiles_ver" />
+		<put-attribute name="body" value="/WEB-INF/views/reply/{1}.jsp" />
+	</definition>
+
+	<!-- Home Page -->
+	<definition name="/home" extends="base-definition">
+		<put-attribute name="title" value="Tea_Pjt_tiles_ver" />
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	</definition>
+	<!-- <definition name="/map/location" extends="base-definition"> <put-attribute 
+		name="title" value="Tea_Pjt_tiles_ver" /> <put-attribute name="body" value="/WEB-INF/views/map/location.jsp" 
+		/> </definition> -->
+	<definition name="/*/*" extends="base-definition">
+		<put-attribute name="title" value="Tea_Pjt_tiles_ver" />
+		<put-attribute name="mainImage"
+			value="/WEB-INF/views/tiles/template/defaultImage.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+
+	<definition name="*/*" extends="base-definition">
+		<put-attribute name="title" value="Tea_Pjt_tiles_ver" />
+		<put-attribute name="mainImage"
+			value="/WEB-INF/views/tiles/template/defaultImage.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
+	</definition>
+
+
+
+	<!-- <definition name="shop/cart_list" extends="base-definition"> <put-attribute 
+		name="title" value="Tea_Pjt_tiles_ver" /> <put-attribute name="body" value="/WEB-INF/views/shop/cart_list.jsp" 
+		/> </definition> <definition name="/shop/product_list" extends="base-definition"> 
+		<put-attribute name="title" value="Tea_Pjt_tiles_ver" /> <put-attribute name="body" 
+		value="/WEB-INF/views/shop/cart_list.jsp" /> </definition> -->
+
+</tiles-definitions>
